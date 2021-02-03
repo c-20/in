@@ -1,0 +1,10 @@
+# requires apt-get install libxi-dev
+# maaaybe requires apt-get install libxmu-dev
+gcc=gcc
+src="property.c state.c list.c setmode.c setptr.c buttonmap.c setint.c feedback.c xinput.c test.c"
+out=test
+inc=-I/usr/include
+lib=-L/usr/X11/lib
+libs="-lX11 -lXext -lXi"
+ver=-DVERSION=\"1.0\" 
+$gcc $ver $inc $lib -o $out $src $libs
